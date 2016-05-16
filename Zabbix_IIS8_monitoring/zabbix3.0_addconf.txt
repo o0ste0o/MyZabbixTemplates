@@ -5,7 +5,7 @@
 # Mandatory: no
 # Default:
 # UserParameter=
-UserParameter=apppool.discovery,powershell -NoProfile -ExecutionPolicy Bypass -File "C:\zabbix\get_apppool.ps1"
-UserParameter=apppool.state[*],powershell -NoProfile -ExecutionPolicy Bypass -File C:\zabbix\get_apppoolstate.ps1 "$1"
-UserParameter=site.discovery,powershell -NoProfile -ExecutionPolicy Bypass -File "C:\zabbix\get_sites.ps1"
-UserParameter=site.state[*],powershell -NoProfile -ExecutionPolicy Bypass -File C:\zabbix\get_sitestate.ps1 "$1"
+UserParameter=apppool.discovery,powershell -NoProfile -ExecutionPolicy Bypass -File "C:\zabbix\script\get_apppool.ps1"
+UserParameter=apppool.state[*],powershell -NoProfile -ExecutionPolicy Bypass -File C:\zabbix\script\get_apppoolstate.ps1 "$1"
+UserParameter=site.discovery,powershell -NoProfile -ExecutionPolicy Bypass -File "C:\zabbix\script\get_sites.ps1"
+UserParameter=site.state[*],powershell -NoProfile -ExecutionPolicy Bypass -File C:\zabbix\script\get_sitestate.ps1 "$1"
