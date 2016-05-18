@@ -9,3 +9,4 @@ UserParameter=apppool.discovery,powershell -NoProfile -ExecutionPolicy Bypass -F
 UserParameter=apppool.state[*],powershell -NoProfile -ExecutionPolicy Bypass -File C:\zabbix\script\get_apppoolstate.ps1 "$1"
 UserParameter=site.discovery,powershell -NoProfile -ExecutionPolicy Bypass -File "C:\zabbix\script\get_sites.ps1"
 UserParameter=site.state[*],powershell -NoProfile -ExecutionPolicy Bypass -File C:\zabbix\script\get_sitestate.ps1 "$1"
+UserParameter=iisport.discovery,powershell -NoProfile -ExecutionPolicy Bypass -File "C:\zabbix\script\get_binding.ps1"
