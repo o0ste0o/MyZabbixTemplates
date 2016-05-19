@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.0</version>
-    <date>2016-05-10T20:04:51Z</date>
+    <version>2.0</version>
+    <date>2016-05-19T07:52:17Z</date>
     <groups>
         <group>
-            <name>
-					Templates
-                </name>
+            <name>Templates</name>
         </group>
     </groups>
     <templates>
@@ -16,14 +14,15 @@
             <description/>
             <groups>
                 <group>
-                    <name>
-					Templates
-                </name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <applications>
                 <application>
                     <name>IIS APP Pool</name>
+                </application>
+                <application>
+                    <name>IIS Ports</name>
                 </application>
                 <application>
                     <name>IIS Site</name>
@@ -37,8 +36,8 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>apppool.discovery</key>
-                    <delay>86400</delay>
-                    <status>1</status>
+                    <delay>60</delay>
+                    <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
@@ -106,7 +105,6 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
-                            <application_prototypes/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -118,7 +116,97 @@
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <dependencies/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>IIS Port bindings</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>iisport.discovery</key>
+                    <delay>60</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>30</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>IIS Port Bind {#PORT}</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>net.tcp.listen[{#PORT}]</key>
+                            <delay>30</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>4</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>IIS Ports</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template Microsoft IIS:net.tcp.listen[{#PORT}].last()}&lt;&gt;1</expression>
+                            <name>IIS Port binding {#PORT} is down</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>0</priority>
+                            <description/>
+                            <type>0</type>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
@@ -199,7 +287,6 @@
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
-                            <application_prototypes/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -211,7 +298,6 @@
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <dependencies/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
