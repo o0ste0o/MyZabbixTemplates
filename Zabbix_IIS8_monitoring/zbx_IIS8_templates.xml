@@ -36,7 +36,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>apppool.discovery</key>
-                    <delay>60</delay>
+                    <delay>86400</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -127,7 +127,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>iisport.discovery</key>
-                    <delay>60</delay>
+                    <delay>86400</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -218,7 +218,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>site.discovery</key>
-                    <delay>30</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
